@@ -1,62 +1,73 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// import { useState } from "react";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
 import "./App.css";
+import Todo from "./todo";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <h1>Vite + React</h1>
-      <Device name="Laptop" price="85000"></Device>
+      <Todo task="Learn React" isDone={true}></Todo>
+      <Todo task="Core concepts" isDone={false}></Todo>
+      <Todo task="Try JSX" isDone={true}></Todo>
+      {/* <Device name="Laptop" price="85000"></Device>
       <Device name="Mobile" price="15000"></Device>
       <Device name="Watch" price="500"></Device>
       <Person grade='8' score='84'></Person>
+      <Student grade={12} score='98'></Student>
       <Student></Student>
       <Student></Student>
-      <Student></Student>
-      <Developer></Developer>
+      <Developer></Developer> */}
     </>
   );
 }
-function Device(props){
+function Device(props) {
   // console.log(props)
-  return <h2>This is a Device: {props.name}, price:{props.price}</h2>
+  return (
+    <h2>
+      This is a Device: {props.name}, price:{props.price}
+    </h2>
+  );
 }
 
-function Person(){
+function Person() {
   const age = 25;
   const money = 80;
   const person = {
-    name: 'sakib', age: 18
-  }
-  return <h3>I am a {person.name} with age: {age + money}</h3>
-}
-const {grade, score} = {grade: '8', score: '84'}
-function Student(props){
-  console.log(props)
+    name: "sakib",
+    age: 18,
+  };
   return (
-  <div className="stident">
-    <h3>This is a student</h3>
-    <p>Name:</p>
-    <p>Age: </p>
-  </div>
-  )
+    <h3>
+      I am a {person.name} with age: {age + money}
+    </h3>
+  );
 }
-function Developer(){
+const { grade, score } = { grade: "8", score: "84" };
+function Student(grade = 1, score = 0) {
+  console.log(props);
+  return (
+    <div className="stident">
+      <h3>This is a student</h3>
+      <p>Class: {grade}</p>
+      <p>Score: {score}</p>
+    </div>
+  );
+}
+function Developer() {
   const developerStyle = {
     margin: "20px",
     padding: "20px",
     border: "2px solid purple",
-    borderRadius: "10px"
-  }
-  return(
+    borderRadius: "10px",
+  };
+  return (
     <div style={developerStyle}>
       <h5>Debo debo</h5>
       <p>Coding: </p>
     </div>
-  )
+  );
 }
 
 export default App;
