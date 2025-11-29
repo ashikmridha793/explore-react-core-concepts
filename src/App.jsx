@@ -5,9 +5,20 @@ import "./App.css";
 import Todo from "./todo";
 import Actor from "./Actor";
 import Singer from "./singer";
+import BookStor from "./BookStor";
+
 function App() {
 
   const actors = ['sakib', 'Shoriful, raj', 'josim', 'rubel', 'salman']
+
+  const books = [
+    {id: 1, name: 'Physics', price: 299},
+    {id: 2, name: 'Math', price: 200},
+    {id: 3, name: 'Higher Math', price: 159},
+    {id: 4, name: 'Chemistry', price: 499},
+    {id: 5, name: 'Biology', price: 399},
+  ]
+
   const singers = [
     {id:1, name: 'dr. Mahfujar rohman', age: 68},
     {id:2, name: 'Eva Rahman', age: 46},
@@ -18,6 +29,8 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
+
+      <BookStore books={books}></BookStore>
 
 
       {
